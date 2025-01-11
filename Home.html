@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Defend Yourself</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+
+        html{
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 100px;
+    width: auto;
+}
+
+nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #007BFF;
+    left: 50%;
+    bottom: -4px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: #007BFF;
+}
+
+nav a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.cta-button {
+    padding: 0.5rem 1rem;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+/* Burger Menu */
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.burger span {
+    display: block;
+    height: 3px;
+    width: 25px;
+    background-color: #333;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    nav {
+        display: none; /* Hide navigation links by default */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #fff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 200px;
+        padding: 1rem;
+        z-index: 1000;
+    }
+
+    nav.show {
+        display: flex; /* Show navigation links when toggled */
+    }
+
+    .burger {
+        display: flex; /* Show burger icon on small screens */
+    }
+}
+
+
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+        .hero {
+            background: url('img/TECH2.jpg') no-repeat center center/cover;
+            background-blend-mode: overlay;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .hero .cta-button {
+            font-size: 1.2rem;
+        }
+        .scam-alerts {
+            display: flex;
+            justify-content: space-around;
+            padding: 2rem;
+            background-color: #fff;
+        }
+        .scam-alert {
+            text-align: center;
+            width: 20%;
+        }
+        .scam-alert img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+        .scam-alert h3 {
+            margin-top: 1rem;
+            font-size: 1.2rem;
+        }
+        footer {
+            background-color: #fff;
+            padding: 1rem 2rem;
+            text-align: center;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+        footer p {
+            font-size: 0.9rem;
+            color: #777;
+        }
+        footer a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const burgerMenu = document.getElementById('burger-menu');
+    const navLinks = document.getElementById('nav-links');
+
+    burgerMenu.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+    });
+});
+
+
+</script>
+
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="Home.html">
+                <img src="img/logo.png" alt="Defend Yourself Logo">
+            </a>
+        </div>
+        <div class="burger" id="burger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav id="nav-links">
+            <a href="#scam-alerts">Scam Alerts</a>
+            <a href="#prevention-tips">Prevention Tips</a>
+            <a href="#report-scam">Report a Scam</a>
+            <a href="#resources">Resources</a>
+        </nav>
+        <a href="https://github.com/Philani56" target="_blank" rel="noopener noreferrer">
+            <button class="cta-button">Subscribe</button>
+        </a>
+    </header>
+    
+    
+    <div class="hero">
+        <h1>Welcome to Defend Yourself</h1>
+        <p>Your trusted source for scam alerts and security tips</p>
+        <a href="https://www.linkedin.com/in/nhlakanipho-philani-khumalo-679726224/" target="_blank" rel="noopener noreferrer">
+            <button class="cta-button">Learn More</button>
+          </a>
+          
+    </div>
+    <div class="scam-alerts" id="scam-alerts">
+        <div id="scam-alerts" style="padding: 2rem; background-color: #f9f9f9;">
+            <h2 style="text-align: center; font-size: 2rem; margin-bottom: 1rem;"></h2>
+            <div style="display: flex; gap: 1.5rem; justify-content: space-around; flex-wrap: wrap;">
+                <!-- Phishing Scams -->
+                <div style="background-color: #fff; padding: 1.5rem; border-radius: 4px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); width: 30%; text-align: center;">
+                    <img src="img/2.jpg" alt="Phishing Scams" style="width: 100%; border-radius: 4px;">
+                    <h3 style="margin-top: 1rem; font-size: 1.5rem;">Phishing Scams</h3>
+                    <p style="font-size: 1rem; color: #555;">Phishing scams involve fraudulent attempts to obtain sensitive information like usernames, passwords, and financial details by pretending to be a trustworthy entity. Look out for suspicious emails and links.</p>
+                    
+                </div>
+                <!-- Online Fraud -->
+                <div style="background-color: #fff; padding: 1.5rem; border-radius: 4px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); width: 30%; text-align: center;">
+                    <img src="img/1.jpg" alt="Online Fraud" style="width: 100%; border-radius: 4px;">
+                    <h3 style="margin-top: 1rem; font-size: 1.5rem;">Online Fraud</h3>
+                    <p style="font-size: 1rem; color: #555;">Online fraud encompasses a wide range of fraudulent schemes conducted over the internet. Be cautious about sharing personal details or making payments to unknown entities.</p>
+                    
+                </div>
+                <!-- Identity Theft -->
+                <div style="background-color: #fff; padding: 1.5rem; border-radius: 4px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); width: 30%; text-align: center;">
+                    <img src="img/3.jpg" alt="Identity Theft" style="width: 100%; border-radius: 4px;">
+                    <h3 style="margin-top: 1rem; font-size: 1.5rem;">Identity Theft</h3>
+                    <p style="font-size: 1rem; color: #555;">Identity theft occurs when someone uses your personal information without permission for fraudulent activities. Protect your details by using strong passwords and monitoring your accounts.</p>
+                    
+                </div>
+            </div>
+
+            <section id="prevention-tips" id="prevention-tips" style="padding: 2rem; background-color: #f5f5f5; color: #333;">
+                <div id="prevention-tips" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                    <h2 style="font-size: 2rem; margin-bottom: 1rem; font-weight: bold;">Prevention Tips</h2>
+                    <p style="font-size: 1rem; margin-bottom: 1.5rem; color: #555;">
+                        Protect yourself with these easy-to-follow yet effective steps. Prevention starts with awareness and action.
+                    </p>
+                    <ul style="list-style-type: none; padding: 0; text-align: left;">
+                        <li style="display: flex; align-items: center; padding: 1rem 0; border-bottom: 1px solid #ddd;">
+                            <img src="img/lock.png" alt="Lock Icon" style="height: 24px; margin-right: 1rem;">
+                            <span><strong>Use Strong, Unique Passwords:</strong> Avoid using the same password for multiple accounts. Use a password manager to create and store secure passwords.</span>
+                        </li>
+                        <li style="display: flex; align-items: center; padding: 1rem 0; border-bottom: 1px solid #ddd;">
+                            <img src="img/checkered-shield-symbol.png" alt="Shield Icon" style="height: 24px; margin-right: 1rem;">
+                            <span><strong>Enable Two-Factor Authentication:</strong> Add an extra layer of security by enabling two-factor authentication on your accounts.</span>
+                        </li>
+                        <li style="display: flex; align-items: center; padding: 1rem 0; border-bottom: 1px solid #ddd;">
+                            <img src="img/link.png" alt="Link Icon" style="height: 24px; margin-right: 1rem;">
+                            <span><strong>Be Cautious of Suspicious Links:</strong> Never click on links from unknown sources. Verify emails and messages before interacting with them.</span>
+                        </li>
+                        <li style="display: flex; align-items: center; padding: 1rem 0; border-bottom: 1px solid #ddd;">
+                            <img src="img/refresh.png" alt="Update Icon" style="height: 24px; margin-right: 1rem;">
+                            <span><strong>Regularly Update Software:</strong> Keep your devices and apps updated to protect against the latest vulnerabilities.</span>
+                        </li>
+                        <li style="display: flex; align-items: center; padding: 1rem 0;">
+                            <img src="img/private.png" alt="Privacy Icon" style="height: 24px; margin-right: 1rem;">
+                            <span><strong>Review Privacy Settings:</strong> Adjust your social media and app privacy settings to minimize data exposure.</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section id="report-scam" style="padding: 1.5rem; background-color: #f9f9f9;">
+                <div style="max-width: 700px; margin: 0 auto; background-color: #fff; padding: 1.5rem; border-radius: 6px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); font-family: 'Poppins', sans-serif; font-size: 14px; color: #444;">
+                    <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 1rem; color: #222;">Report a Scam</h2>
+                    <p style="text-align: center; margin-bottom: 1.5rem; font-size: 0.9rem; line-height: 1.5; color: #666;">
+                        If you've encountered a scam, contact our cybersecurity team to help prevent others from falling victim. Your report will remain confidential.
+                    </p>
+                    <div style="text-align: center; margin-bottom: 1rem;">
+                        <p style="margin: 0; font-weight: 500; color: #444;">Cybersecurity Hotline:</p>
+                        <a href="tel:+123456789" style="display: inline-block; margin-top: 0.5rem; font-size: 1.2rem; font-weight: 600; color: #3F51B5; text-decoration: none;">
+                            (+27) 67 655 5315
+                        </a>
+                    </div>
+                    <div style="text-align: center; margin-bottom: 1.5rem;">
+                        <p style="margin: 0; font-weight: 500; color: #444;">Email Us:</p>
+                        <a href="mailto:cybersecurity@domain.com" style="display: inline-block; margin-top: 0.5rem; font-size: 1rem; font-weight: 600; color: #3F51B5; text-decoration: none;">
+                            khumalophilani580@gmail.com
+                        </a>
+                    </div>
+                    <div style="text-align: center;">
+                       
+                    </div>
+                </div>
+            </section>
+            
+            
+
+
+
+
+
+
+
+
+            <section id="resources" style="padding: 2rem; background-color: #fff;">
+                <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+                    <h2 style="font-size: 2rem; margin-bottom: 1rem; font-weight: bold; color: #333;">More Resources</h2>
+                    <p style="font-size: 1rem; color: #555; margin-bottom: 2rem;">
+                        Equip yourself with additional tools and knowledge to stay safe. Explore these trusted resources for guidance, support, and deeper insights.
+                    </p>
+                    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem; align-items: center;">
+                        <div style="flex: 1; min-width: 280px;">
+                            <img src="img/resources.jpg" alt="Resources" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                        </div>
+                        <div style="flex: 1; min-width: 280px; text-align: left;">
+                            <ul style="list-style: none; padding: 0; color: #333; font-size: 1rem; line-height: 1.8;">
+                                <li style="margin-bottom: 1rem;">
+                                    <strong><a href="https://www.cyber.gov.au/resources-business-and-government/essential-cyber-security/ism/cyber-security-guidelines#:~:text=The%20purpose%20of%20the%20cyber,and%20data%20from%20cyber%20threats." 
+                                        style="color: #007BFF; text-decoration: none;">
+                                         <strong>Cybersecurity Guides</strong>
+                                     </a>: Comprehensive tutorials on how to protect your digital life.
+                                </li>
+                                <li style="margin-bottom: 1rem;">
+                                    <strong><a href="https://fingerprint.com/blog/credit-card-fraud-detection-software/#:~:text=SEON.%20SEON%20is%20a%20fraud%20prevention%20platform,comprehensive%20and%20customizable%20approach%20to%20fraud%20detection." 
+                                        style="color: #007BFF; text-decoration: none;">
+                                         <strong>Scam Detection Tools</strong>
+                                     </a>: Reliable software and extensions to identify fraudulent activity.
+                                </li>
+                                <li style="margin-bottom: 1rem;">
+                                    <strong><a href="https://www.meetup.com/topics/cybersecurity/" 
+                                        style="color: #007BFF; text-decoration: none;">
+                                         <strong>Support Groups</strong>
+                                     </a>: Connect with communities that help victims of scams.
+                                </li>
+                                <li style="margin-bottom: 1rem;">
+                                    <strong><a href="https://www.meetup.com/topics/cybersecurity/" 
+                                        style="color: #007BFF; text-decoration: none;">
+                                         <strong>Government Resources</strong>
+                                     </a>: Official portals for reporting scams and legal assistance.
+                                </li>
+                                <li>
+                                    <strong><a href="https://www.meetup.com/topics/cybersecurity/" 
+                                        style="color: #007BFF; text-decoration: none;">
+                                         <strong>Learning Platforms</strong>
+                                     </a>: Free and paid courses on internet safety and cybersecurity.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+                   
+
+
+
+    
+    <footer>
+        <p>&copy; 2025 Defend Yourself. All rights reserved. | <a href="#Home">Privacy Policy</a> | <a href="#Home">Terms of Service</a></p>
+        <p>Developed by Nhlakanipho Philani Khumalo</p>
+    </footer>
+</body>
+</html>
